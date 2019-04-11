@@ -45,7 +45,7 @@ class Atom {
   // ignore: prefer_final_fields
   bool _isBeingObserved = false;
 
-  final Set<Derivation> _observers = {};
+  final Set<Derivation> _observers = Set<Derivation>();
 
   bool get hasObservers => _observers.isNotEmpty;
 
@@ -101,7 +101,7 @@ class Atom {
     }
 
     if (_observationListeners[kind] == null) {
-      _observationListeners[kind] = {}..add(fn);
+      _observationListeners[kind] = Set<Function>()..add(fn);
     } else {
       _observationListeners[kind].add(fn);
     }

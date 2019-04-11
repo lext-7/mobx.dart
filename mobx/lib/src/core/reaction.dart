@@ -32,7 +32,7 @@ class ReactionImpl implements Reaction {
 
   @override
   // ignore: prefer_final_fields
-  Set<Atom> _observables = {};
+  Set<Atom> _observables = Set<Atom>();
 
   bool get hasObservables => _observables.isNotEmpty;
 
